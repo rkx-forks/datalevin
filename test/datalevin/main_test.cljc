@@ -128,7 +128,7 @@
                          (repeat :large/random)
                          vs))
         dest-dir (u/tmp-dir (str "datalevin-load-dl-" (UUID/randomUUID)))
-        dl-file  (str (u/tmp-dir) "dl" #_(UUID/randomUUID))]
+        dl-file  (str (u/tmp-dir) (UUID/randomUUID))]
     (d/transact! src-conn txs)
     (d/close src-conn)
     (sut/dump src-dir dl-file nil false true false)
